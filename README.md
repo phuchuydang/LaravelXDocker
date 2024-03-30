@@ -34,3 +34,17 @@ From the "Terminal" tab, and run the following command.
     - User: laravel_user
     - Password: laravel_pwd
     - Database: laravel
+
+## Commands
+- To see the containers: `docker-compose ps`
+- To stop the containers: `docker-compose down`
+- To stop the containers and remove the volumes: `docker-compose down -v`
+- To start the containers: `docker-compose up -d`
+- To see the logs: `docker-compose logs -f`
+
+## PHPStandardsFixer and PHPStyleFixer
+1. Go inside php container: `docker exec -it php /bin/sh`
+2. Run the PHPStandardsFixer: `composer php-cs-fixer`
+3. Run the PHPStyleFixer: `composer php-style-fixer`
+4. Run check the PHPStyleFixer: `composer php-style-fixer-check`
+5. Run both: `composer php-laravel-fix`

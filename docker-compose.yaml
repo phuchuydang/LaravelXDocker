@@ -17,8 +17,12 @@ services:
             context: ./docker/php
         container_name: php
         restart: unless-stopped
+        environment:
+            XDEBUG_MODE: "${XDEBUG_MODE:-off}"
+            PHP_IDE_CONFIG: "${PHP_IDE_CONFIG:-serverName=laravel}"
+            PHP_XDEBUG: PHPSTORM
         healthcheck:
-            interval: 30s
+            interval: 10s
             timeout: 3s
             retries: 3
             start_period: 30s
@@ -28,6 +32,8 @@ services:
         volumes:
             - ./src/:/home/source/main
         working_dir: /home/source/main
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
     
     mysql:
         image: mysql:8.0
