@@ -22,9 +22,7 @@ From the "Terminal" tab, and run the following command.
     - `chown -R www-data:www-data /home/source/main`
     - `chmod -R 775 /home/source/main/storage`
     - `chmod -R 775 /home/source/main/bootstrap/cache`
-7. Copy the .env file: 
-    - Linux: `cp .env.example .env`
-    - Windows: `copy .env.example .env`
+7. Copy the .env file: `cp .env.example .env`
 8. Generate the key: `php artisan key:generate`
 9. Run the migrations: `php artisan migrate`
 
